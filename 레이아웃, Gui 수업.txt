@@ -1,0 +1,74 @@
+레이아웃 = pyqt 로 우리가 만든 GUI 파일
+
+우리가 만들 kt 파일이 파이썬에서의 로직이 될것이고
+파이썬에서는 로직에 gui 를 import 했는데,
+import를 하는게 gui를 담당하는 코틀린 파일이 아니라,
+layout 파일을 import 해야한다.
+
+class MainActivity : AppCompatActivity()
+
+=엑티비티 = 페이지, 크롬쓸 때 새로운 탭을 하잖아 
+그게 엑티비티로 보면 됨
+
+setContentView(R.layout.activity_main) 
+여기가 레이아웃 부분
+
+= 이 엑티비티에 새로운 레이아웃을 입히겠다~ 라는 뜻임
+이제 이 부분에 레이아웃파일 안에 있는 변수에 이벤트 등록하면
+끝!
+
+resorse -> layout -> activity_main.xml
+
+★★레이아웃 만들 때 주의사항!★★
+안드로이드 핸드폰의 해상도와 화면 크기!!
+
+★안드로이드 화면 크기와 해상도는 절대 비례하지 않는 관계
+핸드폰 액정이 무지막지 하게 크다 해서 해상도가 높지는 않다.
+해상도 : 그림을 구체화할 수 있는 정도
+팀장님 핸드폰 가로 사이즈가 2160px 인데, 팀원 핸드폰 가로 
+사이즈가 1600px 이고, 해상도를 2160 px 로 만들면
+팀원 핸드폰에서는 짤리게 나옴
+
+그래서 절대 고정 사이즈로 넣는 작업을 많이 하면 안된다.
+예시) 퍼센트, 특정 위치 기준으로 얼마만큼 떨어져 있다던가
+등 상대적인 길이로 정해야 한다.
+
+View (android) == Widget (pyqt)
+									
+뷰의 종류
+
+Button, EditText, TextView, ImageView, ScrollView .....
+	
+<androidx.constraintlayout.widget.ConstraintLayout
+= View 중에서 레이아웃이라는 뷰이다.
+= View 들이 어떤 규칙으로 위치될까
+
+
+match_parent = 부모 사이즈랑 동일하게
+wrap_content = 내용물 길이랑 동일하게
+
+<androidx.constraintlayout.widget.ConstraintLayout
+상하좌우를 통해 상대적인 위치를 정해주는 것!
+기능이 다 다름!!!!!!!
+좌표를 정할 필요가 없이 드레그로 
+
+<LinearLayout xmlns:android
+이건 그냥 한 줄로 배치하게 아니면 수직으로 배치하게
+좌표를 정해야함!
+로그인 화면 할때 이거 쓰면 편함
+
+<FrameLayout
+이건 겹쳐서 사용 가능
+배경화면 위에 글씨를 쓰고 싶으면
+이거 써야함
+
+
+
+
+
+
+
+
+
+
+
